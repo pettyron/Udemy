@@ -51,3 +51,23 @@ function commentsForPost(post, comments) {
 }
 
 commentsForPost(post, comments);
+
+// Another filter that works opposite of filter but uses filter
+
+var numbers = [10, 20, 30, 40];
+
+function reject(array, iteratorFunction) {
+  return array.filter(function (arr) {
+    return !iteratorFunction(arr);
+  });
+}
+
+var lessThanFifteen = reject(numbers, function(number) {
+  return number > 15;
+});
+
+lessThanFifteen;
+
+for (var i = 0; i < array.length; i++) {
+  array[i]
+}
