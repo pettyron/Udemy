@@ -8,7 +8,9 @@
     <hr>
     <div class="row">
       <div class="default-break">
-        <component :is="mode" @answered="answered($event)" @confirmed="mode = 'app-question'"></component>
+        <transition name="flip" mode="out-in">
+          <component :is="mode" @answered="answered($event)" @confirmed="mode='app-question'"></component>
+        </transition>
       </div>
     </div>
   </div>

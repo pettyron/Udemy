@@ -5,3 +5,38 @@
   @extend .col-md-6;
   @extend .offset-md-3;
 }
+
+.flip {
+
+  &-enter {
+
+    &-active {
+      animation: flip-in 0.5s cubic-bezier(0.075,  0.820, 0.165, 1.000) forwards;
+    }
+  }
+
+  &-leave {
+
+    &-active {
+      animation: flip-out 0.5s cubic-bezier(0.075,  0.820, 0.165, 1.000) forwards;
+    }
+  }
+}
+
+@keyframes flip-out {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes flip-in {
+  from {
+    transform: rotateY(90deg);
+  }
+  to {
+    transform: translateY(0deg);
+  }
+}
