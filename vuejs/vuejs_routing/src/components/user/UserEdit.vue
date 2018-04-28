@@ -1,10 +1,43 @@
 <template>
-  <h3>Edit the User</h3>
+  <div>
+    <h3>Edit the User</h3>
+    <p>Locale: {{ $route.query.locale }}</p>
+    <p>Analytics: {{ $route.query.q }}</p>
+    <hr>
+    <div class="mb-2">
+      <button class="btn btn-outline-info" @click="confirmed = true">Confirm</button>
+    </div>
+    <div class="scroll-block"></div>
+    <p id="data">Some extra data</p>
+  </div>
 </template>
 
 <script>
   export default {
+    data() {
+      return {
+        confirmed: false
+      }
+    },
+    beforeRouteLeave(to, from, next) {
+      if (this.confirmed) {
+        next()
+      } else {
+        if (confirm('Are you sure?')) {
+          next()
+        } else {
+          next(false)
+        }
+      }
+    }
   }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.scroll {
+
+  &-block {
+    height: 700px;
+  }
+}
+</style>

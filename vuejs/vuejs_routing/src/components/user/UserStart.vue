@@ -3,9 +3,9 @@
     <p>Please select a User</p>
     <hr>
     <ul class="list-group">
-      <li class="list-group-item"></li>
-      <li class="list-group-item"></li>
-      <li class="list-group-item"></li>
+      <router-link tag="li" to="/user/1" class="list-group-item">User 1</router-link>
+      <router-link tag="li" to="/user/2" class="list-group-item">User 2</router-link>
+      <router-link tag="li" to="/user/3" class="list-group-item">User 3</router-link>
     </ul>
   </div>
 </template>
@@ -16,7 +16,7 @@
 </script>
 
 <style lang="scss" scoped>
-  li {
+  .list-group-item {
     cursor: pointer;
   }
 </style>

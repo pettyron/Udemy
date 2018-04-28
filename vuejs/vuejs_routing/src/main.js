@@ -10,7 +10,23 @@ Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'history',
+  scrollBehavior(to, from , savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    }
+    if (to.hash) {
+      return { selector: to.hash }
+    }
+    return { x: 0, y: 0 }
+  }
+})
+
+router.beforeEach((to, from, next) => {
+  // this gets executed every time
+  console.log('global beforeEach');
+  next()
 })
 
 new Vue({
