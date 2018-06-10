@@ -1,0 +1,8 @@
+.row {
+    padding: 15px 0;
+}
+button {
+    &:nth-of-type(1) {
+        margin-right: 10px;
+    }
+}

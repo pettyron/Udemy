@@ -1,0 +1,29 @@
+<!-- 
+    1. Add a button which says 'Display Details'
+    2. Add a paragraph with any content of your choice.
+    3. Toggle the display of the paragraph with the button
+    4. Log all button clicks in an array and output that array (maybe log timestap or increment number like a list)
+    5. Starting at the 5th log item, give all future log items a blue bg (via ngStyle) and white color (via ngClass)
+ -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="btn-container">
+            <button class="btn btn-primary" (click)="onSetDisplay()">Display Details</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <p *ngIf="seeMe">Now you see me, now you don't.</p>
+    </div>
+    <div class="col-xs-12">
+        <p *ngFor="let clickLogItem of clickLog; let i = index">
+            <!-- <span class="log-item" [ngStyle]="{'background-color': clickLogItem >= 5 ? '#337ab7' : 'transparent'}" [ngClass]="{'text-white': clickLogItem >= 5}">
+                {{ clickLogItem }}
+            </span> -->
+            <span class="log-item" [ngStyle]="{'background-color': i >= 4 ? '#337ab7' : 'transparent'}" [ngClass]="{'text-white': i >= 4}">
+                    {{ clickLogItem }}
+            </span>
+        </p>
+    </div>
+</div>

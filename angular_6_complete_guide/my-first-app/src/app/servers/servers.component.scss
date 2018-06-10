@@ -1,0 +1,16 @@
+div.btn-container {
+    margin-bottom: 15px;
+
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+input[type="text"] {
+    margin-bottom: 15px;
+}
