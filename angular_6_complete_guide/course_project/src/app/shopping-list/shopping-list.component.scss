@@ -1,0 +1,8 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+.list-group {
+    a {
+        @extend .list-group-item;
+        @extend .list-group-item-action;
+        cursor: pointer;
+    }
+}
