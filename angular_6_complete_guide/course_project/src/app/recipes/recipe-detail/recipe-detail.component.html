@@ -9,11 +9,11 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-12">
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle">Manage Recipe</button>
-      <ul class="dropdown-menu">
-        <li class="dropdown-item"><a href="#">To Shopping List</a></li>
+  <div class="col-12 pt-3">
+    <div class="dropdown" ngbDropdown>
+      <button class="btn btn-primary dropdown-toggle" ngbDropdownToggle>Manage Recipe</button>
+      <ul class="dropdown-menu" ngbDropdownMenu>
+        <li class="dropdown-item"><a (click)="onAddToShoppingList()">To Shopping List</a></li>
         <li class="dropdown-item"><a href="#">Edit Recipe</a></li>
         <li class="dropdown-item"><a href="#">Delete Recipe</a></li>
       </ul>
@@ -21,12 +21,16 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-12">
+  <div class="col-12 pt-3">
     {{ recipe.description }}
   </div>
 </div>
 <div class="row">
-  <div class="col-12">
-    Ingredients
+  <div class="col-12 pt-3">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} - {{ ingredient.amount }}
+      </li>
+    </ul>
   </div>
 </div>

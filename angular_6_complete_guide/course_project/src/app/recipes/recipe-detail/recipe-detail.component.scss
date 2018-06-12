@@ -1,3 +1,15 @@
 img {
     max-height: 300px;
 }
+
+.dropdown-item {
+
+    a {
+        color: inherit;
+        cursor: pointer;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
