@@ -1,3 +1,10 @@
-.nav-link {
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+.nav-link, .dropdown-item {
     cursor: pointer;
+}
+
+.active {
+    background-color: transparentize($secondary, 0.8);
+    border-radius: 0.25em;
 }

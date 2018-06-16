@@ -1,11 +1,11 @@
 <div class="list-group">
-  <a class="list-group-item list-group-item-action d-flex justify-content-between" (click)="onSelected()">
+  <a class="list-group-item list-group-item-action d-flex justify-content-between" [routerLink]="[index]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
     <div>
       <h4>{{ recipe.name }}</h4>
       <p>{{ recipe.description }}</p>
     </div>
     <span>
-      <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid" style="max-height: 50px;">
+      <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-fluid" style="max-height: 100px;">
     </span>
   </a>
 </div>

@@ -14,6 +14,9 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { AppRoutes } from './app-routes.module';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +27,15 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     RecipesComponent,
     RecipeListComponent,
     RecipeDetailComponent,
-    RecipeItemComponent
+    RecipeItemComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AppRoutes,
     NgbModule.forRoot()
   ],
   providers: [ShoppingListService],
