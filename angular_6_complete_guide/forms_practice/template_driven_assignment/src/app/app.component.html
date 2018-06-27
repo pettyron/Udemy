@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <header class="page-header">
+                <h2>User Form</h2>
+            </header>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form (ngSubmit)="onSubmit()"
+                  #f="ngForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input class="form-control"
+                           type="email"
+                           name="email"
+                           ngModel
+                           required
+                           email
+                           #email="ngModel">
+                    <span class="help-block"
+                          *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+                </div>
+                <div class="form-group">
+                    <label for="subscription">Subscription Type</label>
+                    <select class="form-control"
+                            name="subscription"
+                            [ngModel]="subscriptionType">
+                        <option *ngFor="let subscription of subscriptions"
+                                [value]="subscription">{{ subscription | titlecase }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control"
+                           type="password"
+                           name="password"
+                           ngModel
+                           required
+                           #password="ngModel">
+                    <span class="help-block"
+                          *ngIf="password.touched && !password.valid">Password field cannot be empty</span>
+                </div>
+                <div>
+                    <button type="submit"
+                            class="btn btn-primary"
+                            [disabled]="!f.valid">Submit</button>
+                </div>
+            </form>
+            <hr *ngIf="submitted">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2"
+             *ngIf="submitted">
+            <div class="panel panel-info">
+                <header class="panel-heading">
+                    <h4>Subscription Data</h4>
+                </header>
+                <div class="panel-body">
+                    <p>Email Address: {{ formOutput.email }}</p>
+                    <p>Subscription Type: {{ formOutput.subscription | titlecase }}</p>
+                    <p>Password: {{ formOutput.password }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
