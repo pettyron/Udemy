@@ -5,8 +5,7 @@ import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
-
-const API_KEY = 'AIzaSyBhLPBWgTMXYYchnELcjIUaFJo5N-cZ9rc';
+import { API_KEY } from './apikeys/apikeys';
 
 // Create a new component. This component should produce some HTML
 class App extends Component {
@@ -33,7 +32,7 @@ class App extends Component {
 
   render() {
     const videoSearch = _.debounce(term => { this.videoSearch(term) }, 500);
-    
+
     return (
       <div>
         <div className="row my-4">
